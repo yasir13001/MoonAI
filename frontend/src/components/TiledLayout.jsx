@@ -1,11 +1,14 @@
-import React from 'react';
+
+import { Link } from 'react-router-dom';
+
 import './TiledLayout.css';
 
+// URL-prop added to each item-object so we can proceed to them
 const items = [
-  { id: 1, title: 'Item 1', description: 'Details of the first item' },
-  { id: 2, title: 'Item 2', description: 'Details of the second item' },
-  { id: 3, title: 'Item 3', description: 'Details of the third item' },
-  { id: 4, title: 'Item 4', description: 'Details of the fourth item' },
+  { id: 1, title: 'Moon Report Generator', description: 'Details of the first item', url: 'moon_report_generator' },
+  { id: 2, title: 'Shopping Assistant', description: 'Details of the second item', url: 'shopping_assistant' },
+  { id: 3, title: 'Coding Assistant', description: 'Details of the third item', url: 'coding_assistant' },
+  { id: 4, title: 'Another One Assistant', description: 'Details of the fourth item', url: 'another_one_assistant' },
  ];
 
 const TiledLayout = () => {
@@ -13,8 +16,10 @@ const TiledLayout = () => {
     <div className="tiled-layout">
       {items.map((item) => (
         <div key={item.id} className="tile">
-          <h3>{item.title}</h3>
-          <p>{item.description}</p>
+          <Link to={item.url}>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+          </Link>
         </div>
       ))}
     </div>
