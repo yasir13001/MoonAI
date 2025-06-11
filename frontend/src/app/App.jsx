@@ -1,12 +1,12 @@
 
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import ReportForm from './components/ReportForm';
-import TiledLayout from './components/TiledLayout';
-import ShoppingAssistant from './components/ShoppingAssistant';
-import CodingAssistant from './components/CodingAssistant';
-import AnotherOneAssistant from './components/AnotherOneAssistant';
+import Header from '../components/header/Header'
+import Footer from '../components/footer/Footer';
+import ReportForm from '../components/subpages/report_form/ReportForm';
+import TiledLayout from '../components/tile/TiledLayout';
+import ShoppingAssistant from '../components/subpages/ShoppingAssistant';
+import CodingAssistant from '../components/subpages/CodingAssistant';
+import AnotherOneAssistant from '../components/subpages/AnotherOneAssistant';
 
 
 import './App.css';

@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import InputWithLabel from './InputWithLabel';
-import SelectMonth from './SelectMonth';
-import ButtonGroup from './ButtonGroup';
-import ResponseMessage from './ResponseMessage';
+import InputWithLabel from '../../../shared/ui/input/InputWithLabel';
+import SelectMonth from '../../../shared/ui/select/SelectMonth';
+import ButtonGroup from '../../../shared/ui/button/ButtonGroup';
+import ResponseMessage from '../../../shared/ui/response/ResponseMessage';
 
 import './ReportForm.css';
 
