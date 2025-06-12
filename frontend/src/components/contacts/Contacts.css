@@ -1,0 +1,10 @@
+#contact {
+    textarea, input {
+        background: white;
+        color: black;
+    }
+    select {
+        background: #EFEFEF;
+        color: black;
+    }
+}
