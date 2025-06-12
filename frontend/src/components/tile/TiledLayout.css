@@ -3,18 +3,18 @@
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;
   padding: 20px;
-background-color:#121212;
+  background-color:#121212;
 }
 
 .tile {
-    margin-top: 150px;
-margin-bottom: 150px;
+  margin-top: 150px;
+  margin-bottom: 150px;
   background-color: #484848;
   border-radius: 12px;
   padding: 16px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
-cursor: pointer;
+  cursor: pointer;
   a,
   a:hover {
     color: white;

@@ -4,15 +4,17 @@ import Header from '../components/header/Header'
 import Footer from '../components/footer/Footer';
 import ReportForm from '../components/subpages/report_form/ReportForm';
 import TiledLayout from '../components/tile/TiledLayout';
-import ShoppingAssistant from '../components/subpages/ShoppingAssistant';
+import MoonDataAPI from '../components/subpages/moon_data_api/MoonDataAPI';
 import CodingAssistant from '../components/subpages/CodingAssistant';
 import AnotherOneAssistant from '../components/subpages/AnotherOneAssistant';
+import Contributors from '../components/contributors/Contributors';
+import Contacts from '../components/contacts/Contacts';
 
 
 import './App.css';
 
 function App() {
-  // React Router added so we can navigate to sub-pages by clicking the cards
+  
   return (
     <Router basename='/MoonAI'>
       
@@ -24,8 +26,8 @@ function App() {
           <Route path="/moon_report_generator"
             element={<ReportForm/>}
           />
-          <Route path="/shopping_assistant"
-            element={<ShoppingAssistant/>}
+          <Route path="/moon_data_api"
+            element={<MoonDataAPI/>}
           />
           <Route path="/coding_assistant"
             element={<CodingAssistant/>}
@@ -35,7 +37,11 @@ function App() {
           />
 
         </Routes>
+
+      <Contributors/>
       
+      <Contacts/>
+
       <Footer/>
 
     </Router>
