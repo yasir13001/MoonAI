@@ -1,10 +1,17 @@
+import BackwardButton from '../../../shared/ui/button/backward_button/BackwardButton';
+import { Link } from 'react-router-dom';
 
 import './MoonDataAPI.css';
 
 const MoonDataAPI = () => {
   
     return (
-        <div className='moon-data-api-wrapper'>
+        <div className='subpage-wrapper'>
+
+            <Link to={'/'}>
+                <BackwardButton/>
+            </Link>
+
             <h2>🌙 Moon Data Request</h2>
             <div class="form-output-wrapper">
                 <form id="moonForm">

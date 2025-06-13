@@ -1,7 +1,8 @@
 .header {
   padding: 60px 20px;
   text-align: center;
-  background-color: #0e0e2c;
+  /* background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1)); */
+  background: #0F0F1A;
   color: #ffffff;
 }
 

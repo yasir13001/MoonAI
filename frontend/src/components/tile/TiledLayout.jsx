@@ -15,12 +15,12 @@ const TiledLayout = () => {
   return (
     <div className="tiled-layout">
       {items.map((item) => (
-        <div key={item.id} className="tile">
-          <Link to={item.url}>
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
-          </Link>
-        </div>
+        <Link to={item.url} key={item.id}>
+          <div className="tile">
+            <h3>{item.title}</h3>
+            <p>{item.description}</p>
+          </div>
+        </Link>
       ))}
     </div>
   );

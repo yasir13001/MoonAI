@@ -18,11 +18,19 @@ function App() {
   return (
     <Router basename='/MoonAI'>
       
-      <Header/>
-
-      <TiledLayout/>
         <Routes>
-          
+
+          <Route path="/"
+            element={
+              <>
+                <Header />
+                <TiledLayout />
+                <Contributors />
+                <Contacts />
+                <Footer />
+              </>
+            }
+          />
           <Route path="/moon_report_generator"
             element={<ReportForm/>}
           />
@@ -37,12 +45,6 @@ function App() {
           />
 
         </Routes>
-
-      <Contributors/>
-      
-      <Contacts/>
-
-      <Footer/>
 
     </Router>
   )

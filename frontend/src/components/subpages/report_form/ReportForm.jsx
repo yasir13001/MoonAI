@@ -3,6 +3,8 @@ import InputWithLabel from '../../../shared/ui/input/InputWithLabel';
 import SelectMonth from '../../../shared/ui/select/SelectMonth';
 import ButtonGroup from '../../../shared/ui/button/ButtonGroup';
 import ResponseMessage from '../../../shared/ui/response/ResponseMessage';
+import BackwardButton from '../../../shared/ui/button/backward_button/BackwardButton';
+import { Link } from "react-router-dom";
 
 import './ReportForm.css';
 
@@ -64,31 +66,38 @@ function ReportForm() {
   }
 
   return (
-    <form id="reportForm" className="report-form">
-      <h2>Moon Report Generator</h2>
-      <InputWithLabel
-        label="Date (DD-MM-YYYY):"
-        id="date"
-        value={date}
-        onChange={e => setDate(e.target.value)}
-      />
-      <SelectMonth
-        value={month}
-        onChange={e => setMonth(e.target.value)}
-      />
-      <InputWithLabel
-        label="Islamic Year:"
-        id="year"
-        type="number"
-        value={year}
-        onChange={e => setYear(Number(e.target.value))}
-      />
-      <ButtonGroup
-        onGenerateMoonParameters={() => generateReport("moon-parameters")}
-        onGenerateVisibilityReport={() => generateReport("visibility-report")}
-      />
-      <ResponseMessage message={responseMessage} isError={isError} />
-    </form>
+    <div className='subpage-wrapper'>
+      <Link to={'/'}>
+        <BackwardButton/>
+      </Link>
+
+      <h2>🌙 Moon Report Generator</h2>
+      <form id="reportForm" className="report-form">
+        <InputWithLabel
+          label="Date (DD-MM-YYYY):"
+          id="date"
+          value={date}
+          onChange={e => setDate(e.target.value)}
+        />
+        <SelectMonth
+          value={month}
+          onChange={e => setMonth(e.target.value)}
+        />
+        <InputWithLabel
+          label="Islamic Year:"
+          id="year"
+          type="number"
+          value={year}
+          onChange={e => setYear(Number(e.target.value))}
+        />
+        <ButtonGroup
+          onGenerateMoonParameters={() => generateReport("moon-parameters")}
+          onGenerateVisibilityReport={() => generateReport("visibility-report")}
+        />
+        <ResponseMessage message={responseMessage} isError={isError} />
+      </form>
+
+    </div>
   );
 }
 
