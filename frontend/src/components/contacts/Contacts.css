@@ -1,10 +1,18 @@
 #contact {
-    textarea, input {
-        background: white;
-        color: black;
+    margin-top: 20px;
+    background: #1E1E3A;
+    margin: 20px;
+    border: 1px solid #3A3A5A;
+    border-radius: 12px;
+
+    textarea, input, select {
+        background: #2D2D4D;
+        border: 1px solid #3A3A5A;
     }
-    select {
-        background: #EFEFEF;
-        color: black;
+    textarea:hover, input:hover, select:hover{
+        background: #303055;
+    }
+    p{
+        color: #d2d2ff;
     }
 }

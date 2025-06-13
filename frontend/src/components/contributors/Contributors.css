@@ -1,0 +1,10 @@
+#contributors{
+    background: #1A1A2E;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 1px solid #3A3A5A;
+    border-radius: 12px;
+    p{
+        color: #A0A0FF;
+    }
+}
