@@ -45,12 +45,14 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background: #6C63FF;
+  background: #FF6B6B;
+  transition: all 0.3s ease;
   cursor: pointer;
   transition: border-color 0.25s;
 }
 button:hover {
-  background: #4e4efc;
+  background: #E05555;
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
 }
 button:focus,
 button:focus-visible {

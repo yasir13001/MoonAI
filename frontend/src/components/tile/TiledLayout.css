@@ -13,7 +13,7 @@
   align-items: center;
   background: #1A1A2E;
   height: 300px;
-  border: 1px solid #3A3A5A;
+  border: 1px solid #FF8A65;
   border-radius: 12px;
   padding: 16px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -28,7 +28,7 @@
 
 .tile:hover {
   transform: scale(1.02);
-  background-color: #16213E;
+  background: linear-gradient(to right, #242444, #3A3A5A);
 }
 
 .tile h3 {
