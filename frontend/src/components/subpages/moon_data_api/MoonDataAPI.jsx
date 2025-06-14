@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import BackwardButton from '../../../shared/ui/button/backward_button/BackwardButton';
 import { Link } from 'react-router-dom';
+
 import './MoonDataAPI.css';
+import '../Subpages.css';
 
 const MoonDataAPI = () => {
     const [formData, setFormData] = useState({
@@ -51,30 +53,52 @@ const MoonDataAPI = () => {
 
     return (
         <div className='subpage-wrapper'>
+
             <Link to={'/'}>
                 <BackwardButton />
             </Link>
 
             <h2>🌙 Moon Data Request</h2>
+            <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-400 sm:mt-4">Details: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores, nesciunt itaque. Voluptatibus a ex ipsam dolorum provident maiores unde laboriosam qui, cumque nobis aliquam maxime error nostrum reprehenderit laborum esse!</p>
             <div className="form-output-wrapper">
-                <form id="moonForm" onSubmit={handleSubmit}>
-                    <label htmlFor="city">City (optional):</label>
-                    <input type="text" id="city" value={formData.city} onChange={handleChange} placeholder="e.g., Karachi" />
+                <form id="moonForm" onSubmit={handleSubmit} class="space-y-4">
+                    <label htmlFor="city" class="block text-sm font-medium text-gray-200">City (optional):</label>
+                    <div class="mt-1">
+                        <input type="text" id="city" value={formData.city} onChange={handleChange} placeholder="e.g., Karachi" 
+                            class="py-3 px-4 block w-full shadow-sm rounded-md"
+                        />
+                    </div>
 
-                    <label htmlFor="lat">Latitude:</label>
-                    <input type="number" id="lat" step="any" required value={formData.lat} onChange={handleChange} />
+                    <label htmlFor="lat" class="block text-sm font-medium text-gray-200">Latitude:</label>
+                    <div class="mt-1">
+                        <input type="number" id="lat" step="any" required value={formData.lat} onChange={handleChange} 
+                            class="py-3 px-4 block w-full shadow-sm rounded-md"
+                        />
+                    </div>
 
-                    <label htmlFor="lon">Longitude:</label>
-                    <input type="number" id="lon" step="any" required value={formData.lon} onChange={handleChange} />
+                    <label htmlFor="lon" class="block text-sm font-medium text-gray-200">Longitude:</label>
+                    <div class="mt-1">
+                        <input type="number" id="lon" step="any" required value={formData.lon} onChange={handleChange} 
+                            class="py-3 px-4 block w-full shadow-sm rounded-md"
+                        />
+                    </div>
 
-                    <label htmlFor="elevation">Elevation (meters):</label>
-                    <input type="number" id="elevation" value={formData.elevation} onChange={handleChange} />
+                    <label htmlFor="elevation" class="block text-sm font-medium text-gray-200">Elevation (meters):</label>
+                    <div class="mt-1">
+                        <input type="number" id="elevation" value={formData.elevation} onChange={handleChange} 
+                            class="py-3 px-4 block w-full shadow-sm rounded-md"
+                        />
+                    </div>
 
-                    <label htmlFor="date">Date (dd-mm-yyyy):</label>
-                    <input type="text" id="date" required placeholder="28-02-2025" value={formData.date} onChange={handleChange} />
+                    <label htmlFor="date" class="block text-sm font-medium text-gray-200">Date (dd-mm-yyyy):</label>
+                    <div class="mt-1">
+                        <input type="text" id="date" required placeholder="28-02-2025" value={formData.date} onChange={handleChange} 
+                            class="py-3 px-4 block w-full shadow-sm rounded-md"
+                        />
+                    </div>
 
-                    <label htmlFor="timezone">Timezone:</label>
-                    <select id="timezone" required value={formData.timezone} onChange={handleChange}>
+                    <label htmlFor="timezone" class="block text-sm font-medium text-gray-200">Timezone:</label>
+                    <select id="timezone" required value={formData.timezone} onChange={handleChange} class="py-3 px-4 block w-full shadow-sm rounded-md">
                         <option value="">--Select Timezone--</option>
                         <option value="Asia/Karachi">Asia/Karachi</option>
                         <option value="UTC">UTC</option>
@@ -84,7 +108,7 @@ const MoonDataAPI = () => {
                         <option value="Europe/London">Europe/London</option>
                     </select>
 
-                    <button className='submit-button-moon-data-api' type="submit" disabled={loading}>
+                    <button className='submit-button-moon-data-api' type="submit" disabled={loading} class="w-full flex justify-center py-3 px-6 border border-transparent rounded-md shadow-sm text-base font-medium text-white focus:outline-none focus:ring-2 focus:ring-offset-2">
                         {loading ? 'Fetching...' : 'Get Moon Data'}
                     </button>
                 </form>

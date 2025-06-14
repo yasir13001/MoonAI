@@ -7,4 +7,7 @@
     p{
         color: #00E5FF;
     }
+    .contributor-avatar:hover {
+        transform: scale(1.1);
+    }
 }

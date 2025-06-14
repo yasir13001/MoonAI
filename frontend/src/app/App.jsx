@@ -16,7 +16,7 @@ import './App.css';
 function App() {
   
   return (
-    <Router basename='/MoonAI'>
+    <Router basename='/MoonAI/'>
       
         <Routes>
 

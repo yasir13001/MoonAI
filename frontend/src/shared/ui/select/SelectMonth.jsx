@@ -19,7 +19,7 @@ function SelectMonth({ value, onChange }) {
   return (
     <div className="select-month">
       <label htmlFor="month">Islamic Month:</label>
-      <select id="month" value={value} onChange={onChange} required>
+      <select id="month" value={value} onChange={onChange} required class="py-3 px-4 block w-full shadow-sm rounded-md">
         <option value="">--Select Month--</option>
         {islamicMonths.map(month => (
           <option key={month} value={month}>{month}</option>

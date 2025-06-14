@@ -1,9 +1,9 @@
 .response-message {
   margin-top: 1rem;
   font-weight: bold;
-  color: green;
+  color: rgb(0, 216, 0);
 }
 
 .response-message.error {
-  color: red;
+  color: #FF6B6B;
 }

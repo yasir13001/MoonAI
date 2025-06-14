@@ -1,13 +1,4 @@
-#root {
-    background: #0F0F1A;
-  /*max-width: 1280px;*/
-  margin: 0 auto;
-  /*padding: 2rem;*/
-  display: flex;
-  flex-direction: column; 
-  /*text-align: center;*/
-  /*background-color:blue;*/
-}
+
 *,
 ::before,
 ::after {
@@ -64,19 +55,7 @@
     --tw-contain-style:
 }
 
-.gradient-text {
-    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-}
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
-}
-.contributor-avatar:hover {
-    transform: scale(1.1);
-}
+
     
 ::backdrop {
     --tw-border-spacing-x: 0;
@@ -991,6 +970,51 @@ video {
 .focus\:ring-offset-2:focus {
     --tw-ring-offset-width: 2px
 }
+
+/* ***************** APP rules ****************** */
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+h2{
+  font-size: 2.0em;
+  line-height: 1.2;
+}
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 0.6em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background: #FF6B6B;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  background: #E05555;
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+textarea, input, select {
+    background: #2D2D4D;
+    border: 1px solid #4b4b6a;
+}
+textarea:hover, input:hover, select:hover{
+    background: #303055;
+}
+textarea:focus, input:focus, select:focus{
+    border-color: #FF8A65;
+    outline: none;
+}
+
+/* ***************** MEDIA QUERIES ****************** */
 
 @media (min-width: 640px) {
     .sm\:ml-6 {

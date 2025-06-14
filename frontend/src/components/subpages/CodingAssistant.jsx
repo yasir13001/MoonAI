@@ -1,7 +1,7 @@
 import BackwardButton from '../../shared/ui/button/backward_button/BackwardButton';
 import { Link } from 'react-router-dom';
 
-import './CardItem.css';
+import './Subpages.css';
 
 const CodingAssistant = () => {
 
