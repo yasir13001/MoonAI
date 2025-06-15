@@ -7,6 +7,7 @@ import BackwardButton from '../../../shared/ui/button/backward_button/BackwardBu
 import { Link } from "react-router-dom";
 
 import './ReportForm.css';
+import '../Subpages.css';
 
 const backendURL = "https://moonai-backend.onrender.com"; // رابط الـ backend الخاص بك
 //const backendURL = "http://127.0.0.1:8000";
@@ -67,36 +68,39 @@ function ReportForm() {
 
   return (
     <div className='subpage-wrapper'>
+      
       <Link to={'/'}>
         <BackwardButton/>
       </Link>
 
       <h2>🌙 Moon Report Generator</h2>
-      <form id="reportForm" className="report-form">
-        <InputWithLabel
-          label="Date (DD-MM-YYYY):"
-          id="date"
-          value={date}
-          onChange={e => setDate(e.target.value)}
-        />
-        <SelectMonth
-          value={month}
-          onChange={e => setMonth(e.target.value)}
-        />
-        <InputWithLabel
-          label="Islamic Year:"
-          id="year"
-          type="number"
-          value={year}
-          onChange={e => setYear(Number(e.target.value))}
-        />
-        <ButtonGroup
-          onGenerateMoonParameters={() => generateReport("moon-parameters")}
-          onGenerateVisibilityReport={() => generateReport("visibility-report")}
-        />
-        <ResponseMessage message={responseMessage} isError={isError} />
-      </form>
-
+      <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-400 sm:mt-4">Details: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores, nesciunt itaque. Voluptatibus a ex ipsam dolorum provident maiores unde laboriosam qui, cumque nobis aliquam maxime error nostrum reprehenderit laborum esse!</p>
+      <div className="form-output-wrapper">  
+        <form id="reportForm" class="space-y-6">
+          <InputWithLabel
+            label="Date (DD-MM-YYYY):"
+            id="date"
+            value={date}
+            onChange={e => setDate(e.target.value)}
+          />
+          <SelectMonth
+            value={month}
+            onChange={e => setMonth(e.target.value)}
+          />
+          <InputWithLabel
+            label="Islamic Year:"
+            id="year"
+            type="number"
+            value={year}
+            onChange={e => setYear(Number(e.target.value))}
+          />
+          <ButtonGroup
+            onGenerateMoonParameters={() => generateReport("moon-parameters")}
+            onGenerateVisibilityReport={() => generateReport("visibility-report")}
+          />
+          <ResponseMessage message={responseMessage} isError={isError} />
+        </form>
+      </div>
     </div>
   );
 }

@@ -1,0 +1,37 @@
+.subpage-wrapper{
+    background: #1E1E3A;
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    border: 1px solid #3A3A5A;
+    border-radius: 12px;
+    padding: 20px;
+    min-height: 100vh;
+    h2 {
+        font-weight: bold;
+        text-align: center;
+        margin: 30px auto;
+    }
+    p{
+        color: #d2d2ff;
+    }
+    form{
+        background: #1E1E3A;
+        padding: 20px;
+        border-radius: 12px;
+        flex: 1;
+        /* min-width: 300px; disabled for responsive*/
+        max-width: 600px;
+    }
+    .form-output-wrapper {
+        display: flex;
+        gap: 30px;
+        align-items: flex-start;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    label {
+        font-weight: bold;
+        margin-top: 10px;
+    }
+}

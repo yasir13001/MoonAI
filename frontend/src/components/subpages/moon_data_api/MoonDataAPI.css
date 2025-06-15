@@ -1,64 +1,4 @@
-.subpage-wrapper{
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #e0f7fa, #f1f8e9);
-    padding: 20px;
-    margin: 0;
-
-    h2 {
-        font-weight: bold;
-        color: black;
-        text-align: center;
-        margin: 30px auto;
-    }
-    
-    .form-output-wrapper {
-        display: flex;
-        gap: 30px;
-        align-items: flex-start;
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-    
-    form {
-        background-color: #ffffffdd;
-        padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        flex: 1;
-        /* min-width: 300px; disabled for responsive*/
-        max-width: 400px;
-    }
-    
-    input, select, .submit-button-moon-data-api {
-        padding: 8px;
-        margin: 8px 0;
-        width: 100%;
-        max-width: 100%;
-        border: 1px solid #ccc;
-        border-radius: 6px;
-        box-sizing: border-box;
-        background-color: #ffffffdd;
-        color: black;
-    }
-    
-    label {
-        font-weight: bold;
-        display: block;
-        margin-top: 10px;
-        color: black;
-    }
-    
-    .submit-button-moon-data-api {
-        background-color: #00796b;
-        color: white;
-        border: none;
-        cursor: pointer;
-        margin-top: 15px;
-    }
-    
-    .submit-button-moon-data-api:hover {
-        background-color: #004d40;
-    }
+#moonForm{
     
     #output {
         background-color: #1e1e1e;
@@ -72,7 +12,7 @@
         word-break: break-word;
         flex: 1;
         /* min-width: 300px; disabled for responsive */
-        max-width: 600px;
+        max-width: 560px;
     }
     #output span.string {
         color: #ce9178;
