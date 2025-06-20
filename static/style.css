@@ -1,4 +1,4 @@
-/* Reset */
+/* MoonAI Report Generation Page Styles */
 * {
   margin: 0;
   padding: 0;
@@ -6,9 +6,9 @@
 }
 
 body {
-  font-family: "Segoe UI", sans-serif;
-  background: linear-gradient(to right, #e0f7fa, #f1f8e9);
-  height: 100vh;
+  font-family: "Times New Roman", Times, serif; /* Improved font stack */
+  background: linear-gradient(to right, #207eb5, #000000);
+  min-height: 100vh; /* Use min-height instead of fixed height for better content adaptability */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,26 +16,27 @@ body {
 }
 
 .container {
-  background-color: #fff;
+  background-color: #85b4c1;
   padding: 40px 30px;
   border-radius: 15px;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adjusted for a softer shadow */
   width: 100%;
   max-width: 450px;
+  text-align: center; /* Center form elements within the container */
 }
 
 h2 {
-  text-align: center;
-  color: #2c3e50;
+  color: #5d0404;
   margin-bottom: 25px;
-  font-size: 24px;
+  font-size: 28px; /* Slightly larger for prominence */
 }
 
 label {
   display: block;
-  margin-bottom: 5px;
-  color: #333;
-  font-weight: 500;
+  text-align: left; /* Align labels to the left */
+  margin-bottom: 8px; /* Increased margin for better spacing */
+  color: #1b0cbf;
+  font-weight: 600; /* Slightly bolder font */
 }
 
 input,
@@ -43,43 +44,98 @@ select {
   width: 100%;
   padding: 12px;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  transition: border-color 0.3s ease;
+  border: 2px solid #cccccc;
+  border-radius: 8px; /* Slightly smaller border-radius for inputs */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Added box-shadow transition */
 }
 
 input:focus,
 select:focus {
-  border-color: #007bff;
+  border-color: #1aeb13;
+  box-shadow: 0 0 8px rgba(26, 235, 19, 0.4); /* Green glowing effect on focus */
   outline: none;
 }
 
 .btn-class {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 15px; /* Increased gap between buttons */
+  justify-content: center; /* Center buttons when they wrap */
+  margin-top: 25px; /* Added some top margin */
 }
 
 button {
-  flex: 1 1 45%;
-  background-color: #007bff;
+  flex: 1 1 48%; /* Adjusted flex-basis slightly */
+  background-color: #09ff00;
   color: white;
-  padding: 12px 10px;
+  padding: 14px 15px; /* Slightly more padding for buttons */
   border: none;
-  border-radius: 8px;
+  border-radius: 8px; /* Consistent border-radius with inputs */
   cursor: pointer;
   font-weight: bold;
-  transition: background-color 0.3s ease;
+  font-size: 16px; /* Slightly larger font for buttons */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for buttons */
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #00b3a4;
+  transform: translateY(-3px); /* More pronounced lift effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Darker shadow on hover */
 }
 
 #responseMessage {
-  margin-top: 20px;
-  text-align: center;
+  margin-top: 25px; /* Increased margin for message */
   font-weight: bold;
   color: green;
+  font-size: 16px;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 550px) {
+  .container {
+    padding: 30px 20px;
+    margin: 10px; /* Add some margin on very small screens */
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  input,
+  select,
+  button {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .btn-class button {
+    flex: 1 1 100%; /* Buttons stack vertically on smaller screens */
+  }
+
+  #responseMessage {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 380px) {
+  body {
+    padding: 10px;
+  }
+  .container {
+    padding: 25px 15px;
+  }
+  h2 {
+    font-size: 22px;
+  }
+  input,
+  select,
+  button {
+    font-size: 14px;
+    padding: 10px;
+  }
 }
