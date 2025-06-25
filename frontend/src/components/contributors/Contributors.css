@@ -1,0 +1,13 @@
+#contributors{
+    background: #1A1A2E;
+    margin-left: 20px;
+    margin-right: 20px;
+    border: 1px solid #3A3A5A;
+    border-radius: 12px;
+    p{
+        color: #00E5FF;
+    }
+    .contributor-avatar:hover {
+        transform: scale(1.1);
+    }
+}

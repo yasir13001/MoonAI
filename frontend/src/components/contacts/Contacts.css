@@ -1,0 +1,13 @@
+#contact {
+    background: #1E1E3A;
+    margin: 20px;
+    border: 1px solid #3A3A5A;
+    border-radius: 12px;
+
+    a:hover{
+        color: #FF8A65;
+    }
+    p{
+        color: #d2d2ff;
+    }
+}

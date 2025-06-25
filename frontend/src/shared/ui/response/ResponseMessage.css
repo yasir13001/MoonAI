@@ -1,0 +1,9 @@
+.response-message {
+  margin-top: 1rem;
+  font-weight: bold;
+  color: rgb(0, 216, 0);
+}
+
+.response-message.error {
+  color: #FF6B6B;
+}

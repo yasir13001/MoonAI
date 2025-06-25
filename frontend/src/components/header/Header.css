@@ -1,0 +1,19 @@
+.header {
+  padding: 60px 20px;
+  text-align: center;
+  /* background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1)); */
+  background: #0F0F1A;
+  color: #ffffff;
+}
+
+.header-title {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.header-subtitle {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}

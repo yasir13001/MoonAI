@@ -1,0 +1,11 @@
+.backward-button-wrapper{
+    .backward-button{
+        background: #FF8A65;
+        padding: 0;
+        width: 120px;
+        height: 25px;
+    }
+    .backward-button:hover{
+        background: #f56f46;
+    }
+}
