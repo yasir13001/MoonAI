@@ -2,6 +2,38 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Moon Report Generator</title>
+    <link rel="stylesheet" href="static/style.css" />
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
+  </head>
+  <body>
+    <main class="container">
+      <h2>Moon Report Generator</h2>
+      <form id="reportForm">
+        <label for="date">Date (DD-MM-YYYY):</label>
+        <input type="date" id="date" value="2025-05-28" required />
+
+        <label for="month">Islamic Month:</label>
+        <select id="month" required></select>
+
+        <label for="year">Islamic Year:</label>
+        <input type="number" id="year" value="1446" required />
+
+        <div class="btn-class">
+          <button type="button" onclick="generateReport('moon-parameters')">
+            Generate Moon Parameters
+          </button>
+          <button type="button" onclick="generateReport('visibility-report')">
+            Generate Visibility Report
+          </button>
+        </div>
+      </form>
+      <p id="responseMessage"></p>
+    </main>
+
+    <script src="static/script.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MoonAI - Lunar Visibility Reports</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700&display=swap" rel="stylesheet">
