@@ -46,9 +46,9 @@
     white-space: pre-wrap;
     word-break: break-word;
     flex: 1;
-    /* min-width: 300px; disabled for responsive */
     max-width: 560px;
     }
+
     #output span.string {
         color: #ce9178;
     }
@@ -63,5 +63,37 @@
     }
     #output span.key {
         color: #9cdcfe;
+    }
+
+    .tiled-layout {
+        padding: 0px;
+        background: transparent;
+
+        p{
+            color: #00E5FF;
+        }
+        h3{
+            font-weight: bold;
+        }
+        .id-p{
+            color: #A0A0FF;
+        }
+        .quantity-p{
+            color: #FF8A65;
+        }
+        .in-stock-p{
+            color: #6CFFA0;
+        }
+    }
+    .tile{
+        align-items: center;
+        background: #2D2D4D;
+        border: 1px solid #4A4A6B;
+        height: auto;
+    }
+    .tile:hover {
+        background: #3A3A5A;
+        transition: none;
+        transform: none;
     }
 }
