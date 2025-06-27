@@ -9,7 +9,7 @@
     h2 {
         font-weight: bold;
         text-align: center;
-        margin: 30px auto;
+        margin: 50px auto;
     }
     p{
         color: #d2d2ff;
@@ -33,5 +33,35 @@
     label {
         font-weight: bold;
         margin-top: 10px;
+    }
+    
+    #output {
+    background-color: #0F0F1A;
+    color: #d4d4d4;
+    margin: 20px auto 30px;
+    padding: 20px;
+    border-radius: 10px;
+    font-family: monospace;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+    flex: 1;
+    /* min-width: 300px; disabled for responsive */
+    max-width: 560px;
+    }
+    #output span.string {
+        color: #ce9178;
+    }
+    #output span.number {
+        color: #b5cea8;
+    }
+    #output span.boolean {
+        color: #569cd6;
+    }
+    #output span.null {
+        color: #dcdcaa;
+    }
+    #output span.key {
+        color: #9cdcfe;
     }
 }
