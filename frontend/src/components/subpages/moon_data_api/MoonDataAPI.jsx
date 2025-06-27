@@ -58,7 +58,7 @@ const MoonDataAPI = () => {
                 <BackwardButton />
             </Link>
 
-            <h2>🌙 Moon Data Request</h2>
+            <h2 class="text-3xl font-extrabold text-white sm:text-4xl">🌙 Moon Data Request</h2>
             <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-400 sm:mt-4">Details: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores, nesciunt itaque. Voluptatibus a ex ipsam dolorum provident maiores unde laboriosam qui, cumque nobis aliquam maxime error nostrum reprehenderit laborum esse!</p>
             <div className="form-output-wrapper">
                 <form id="moonForm" onSubmit={handleSubmit} class="space-y-4">
