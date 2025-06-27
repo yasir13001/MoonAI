@@ -1,5 +1,5 @@
 .btn-class{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 16px;
 }

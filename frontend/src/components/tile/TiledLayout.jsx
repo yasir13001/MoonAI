@@ -7,7 +7,7 @@ import './TiledLayout.css';
 const items = [
   { id: 1, title: 'Moon Report Generator', description: 'Details of the first item', url: 'moon_report_generator' },
   { id: 2, title: 'Moon Data API', description: 'Details of the second item', url: 'moon_data_api' },
-  { id: 3, title: 'Coding Assistant', description: 'Details of the third item', url: 'coding_assistant' },
+  { id: 3, title: 'Shopping Assistant', description: 'Details of the third item', url: 'shopping_assistant' },
   { id: 4, title: 'Another One Assistant', description: 'Details of the fourth item', url: 'another_one_assistant' },
  ];
 

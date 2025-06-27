@@ -98,8 +98,10 @@ function ReportForm() {
             onGenerateMoonParameters={() => generateReport("moon-parameters")}
             onGenerateVisibilityReport={() => generateReport("visibility-report")}
           />
-          <ResponseMessage message={responseMessage} isError={isError} />
         </form>
+      </div>
+      <div id="output">
+          <ResponseMessage message={responseMessage} isError={isError} />
       </div>
     </div>
   );
