@@ -2,6 +2,8 @@
 
 This project provides a tool to generate moon visibility reports based on a specific date, Islamic month, and Islamic year. It includes a FastAPI server that can be accessed locally, a form to generate reports, and a batch file (`start_app.bat`) to automatically start the app when your computer boots.
 
+`Note: The backend is already connected and deployed using Render, so you don't need to run it locally unless you want to test or develop on your machine.`
+
 ## Requirements
 
 Before running the app, make sure to install the required dependencies.
@@ -50,40 +52,39 @@ Before running the app, make sure to install the required dependencies.
 
 ## Running the Application
 
-1. **Start the FastAPI server**:
+1. **Start the React frontend**
 
-   To run the FastAPI server locally, use the following command:
-
-   ```bash
-   uvicorn src.main:app --host 127.0.0.1 --port 8000 --reload
-   ```
-
-   This will start the server on `http://127.0.0.1:8000`, and you can interact with it via the HTML form at `http://127.0.0.1:8000/`.
-
-
-2. **Start the React frontend (if applicable)**
-
-If you want to contribute in React frontend, follow these steps to start it:
-
-1. **Navigate to the frontend directory:**
-
-   ```bash
-   cd frontend
-   ```
-
-2. **Install frontend dependencies** (only needed once or when `package.json` changes):
-
-   ```bash
-   npm install
-   ```
-
-3. **Start the React app**:
-
-   ```bash
-   npm run dev
-   ```
+    1. **Navigate to the frontend directory:**
+    
+       ```bash
+       cd frontend
+       ```
+    
+    2. **Install frontend dependencies** (only needed once or when `package.json` changes):
+    
+       ```bash
+       npm install
+       ```
+    
+    3. **Start the React app**:
+    
+       ```bash
+       npm run dev
+       ```
 
    This will start the development server, typically at `http://localhost:5173`.
+   
+
+2. **Start the FastAPI server** (Optional):
+
+If you'd like to run the FastAPI server locally, use the following command:
+
+```bash
+uvicorn src.main:app --host 127.0.0.1 --port 8000 --reload
+```
+
+This will start the server on `http://127.0.0.1:8000`, and you can interact with it via the HTML form at `http://127.0.0.1:8000/`.
+
 
 ---
 
