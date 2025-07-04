@@ -1,19 +1,117 @@
-.header {
-  padding: 60px 20px;
-  text-align: center;
-  /* background-color: rgb(31 41 55 / var(--tw-bg-opacity, 1)); */
-  background: #0F0F1A;
-  color: #ffffff;
-}
+.header-section{
 
-.header-title {
-  font-size: 3rem;
-  margin-bottom: 10px;
-}
+  .header {
+    padding: 20px 60px;
+    text-align: center;
+    background: #0F0F1A;
+    color: #ffffff;
+  
+  }
+  nav{
+    z-index: 10;
+    padding: 5px 20px;
+    position: fixed;
+    width: 100%;
+    background: #0f0f1ae0;
+    color: #FF8A65;
+    display: flex;
+    justify-content: space-between;
 
-.header-subtitle {
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin: 0 auto;
-  line-height: 1.6;
+    .logo, .nav-routes, .burger-button{
+      z-index: 10;
+    }
+  
+    .nav-routes{
+      width: 80%;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      span{
+        font-weight: bold;
+        transition: text-shadow 0.3s;
+        
+        &:hover {
+          cursor: pointer;
+          color: #FF8A65;
+          text-shadow: 
+            0 0 5px #FF8A65, 
+            0 0 10px rgba(255, 138, 101, 0.5);
+        }
+      }
+    }
+  }
+  .nav-moon-ai-tools {
+    position: fixed;
+    left: 0;
+    top: 60px;
+    width: 100%;
+    background: #0f0f1ae0;
+    z-index: 8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+  
+    opacity: 0;
+    transform: translateY(-200%);
+    transition: 
+      max-height 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+      opacity 0.6s ease,
+      transform 0.6s ease;
+  }
+  .nav-moon-ai-tools.active{
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .tools{
+    margin: 5px;
+    color: #FF8A65;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    transition: text-shadow 0.3s;
+    a {
+      display: block;
+      width: 100%;
+      padding: 8px 0;
+      color: inherit;
+      text-decoration: none;
+      text-align: center;
+    }
+  }
+  .tools:hover{
+    color: #FF8A65;
+    text-shadow: 0 0 5px #FF8A65, 
+                0 0 10px rgba(255, 138, 101, 0.5);
+  }
+  
+  .header-title {
+    margin-top: 80px;
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  
+  .header-subtitle {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .burger-button{
+    margin: 0;
+    padding: 5px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border: none;
+    font-size: 6px;
+  }
+  .burger-line{
+    display: inline-block;
+    width: 25px;
+    height: 2px;
+    background: #FF8A65;
+  }
 }
