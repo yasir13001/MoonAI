@@ -132,7 +132,7 @@ html {
     -webkit-text-size-adjust: 100%;
     -moz-tab-size: 4;
     tab-size: 4;
-    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    /* font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; */
     font-feature-settings: normal;
     font-variation-settings: normal;
     -webkit-tap-highlight-color: transparent
@@ -178,7 +178,7 @@ code,
 kbd,
 pre,
 samp {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    /* font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; */
     font-feature-settings: normal;
     font-variation-settings: normal;
     font-size: 1em
@@ -985,22 +985,56 @@ h2{
 button {
   border-radius: 8px;
   border: 1px solid transparent;
-  padding: 0.6em 0.6em;
+  padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
   background: #FF6B6B;
-  transition: all 0.3s ease;
+  color: white;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  background: #E05555;
-  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  z-index: 1;
+    
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 6px;
+    box-shadow: 0 0 8px 2px rgba(255, 107, 107, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: -1;
+  }
+
+  &:hover {
+    background: #FF5252;
+    
+    &::before {
+      opacity: 1;
+      box-shadow: 
+        0 0 12px 3px rgba(255, 107, 107, 0.7),
+        0 0 20px 5px rgba(255, 107, 107, 0.4);
+    }
+  }
+
+  &:active {
+    background: #E05555;
+  }
+
+  &:focus-visible {
+    outline: none;
+    &::before {
+      opacity: 1;
+      box-shadow: 
+        0 0 0 2px white,
+        0 0 12px 6px rgba(255, 107, 107, 0.8);
+    }
+  }
 }
 textarea, input, select {
     background: #2D2D4D;
@@ -1015,6 +1049,23 @@ textarea:focus, input:focus, select:focus{
 }
 
 /* ***************** MEDIA QUERIES ****************** */
+@media screen and (max-width: 767px) {
+    .nav-routes{
+        display: none !important;
+    }
+    .burger-button{
+        visibility: visible;
+    }
+}
+@media screen and (min-width: 768px){
+    .nav-routes{
+        visibility: visible;
+    }
+    .burger-button{
+        display: none;
+    }
+}
+
 
 @media (min-width: 640px) {
     .sm\:ml-6 {
