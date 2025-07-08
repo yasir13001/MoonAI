@@ -8,7 +8,7 @@ const AnotherOneAssistant = () => {
     return (
         <div className='subpage-wrapper'>
         
-            <Link to={'/'}>
+            <Link to={'/moon_ai_tools'}>
                 <BackwardButton/>
             </Link>
 

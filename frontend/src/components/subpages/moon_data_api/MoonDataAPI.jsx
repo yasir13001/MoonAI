@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import BackwardButton from '../../../shared/ui/button/backward_button/BackwardButton';
 import { Link } from 'react-router-dom';
+import logo from '/MoonAI-logo-resized.png';
 
 import './MoonDataAPI.css';
 import '../Subpages.css';
@@ -54,11 +55,14 @@ const MoonDataAPI = () => {
     return (
         <div className='subpage-wrapper'>
 
-            <Link to={'/'}>
+            <Link to={'/moon_ai_tools'}>
                 <BackwardButton />
             </Link>
 
-            <h2 class="text-3xl font-extrabold text-white sm:text-4xl">🌙 Moon Data Request</h2>
+            <h2 class="flex items-center justify-center gap-3 text-3xl font-extrabold text-white sm:text-4xl">
+                <img src={logo} alt='Moon AI organization logo' width={60}/>
+                Moon Data Request
+            </h2>
             <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-400 sm:mt-4">Details: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores, nesciunt itaque. Voluptatibus a ex ipsam dolorum provident maiores unde laboriosam qui, cumque nobis aliquam maxime error nostrum reprehenderit laborum esse!</p>
             <div className="form-output-wrapper">
                 <form id="moonForm" onSubmit={handleSubmit} class="space-y-4">

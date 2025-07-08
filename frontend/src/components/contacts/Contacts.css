@@ -1,4 +1,8 @@
 #contact {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
     background: #1E1E3A;
     margin: 20px;
     border: 1px solid #3A3A5A;

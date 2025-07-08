@@ -13,7 +13,9 @@
 }
 
 #root {
-  background: #0F0F1A;
+  background:
+    radial-gradient(ellipse at 20% 20%, rgba(255, 138, 101, 0.15) 0%, transparent 60%),
+    linear-gradient(to bottom, #1A1A2E, #0F0F1C);
   margin: 0 auto;
   display: flex;
   flex-direction: column; 

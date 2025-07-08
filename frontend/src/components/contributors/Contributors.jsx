@@ -15,13 +15,13 @@ const Contributors = () => {
     <div id="contributors" class="py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-extrabold text-white sm:text-4xl">Our Valued Contributors</h2>
+                <h2 class="text-3xl mb-12 font-extrabold text-white sm:text-4xl">Our Valued Contributors</h2>
                 <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-400 sm:mt-4">
                     The talented individuals who make MoonAI possible
                 </p>
             </div>
             
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-16">
                 
                 {contributors.map((obj,index) => (
                     
@@ -41,7 +41,7 @@ const Contributors = () => {
             <div class="mt-12 text-center">
                 <p class="text-gray-300 mb-4">Want to see your name here?</p>
                 <a href="https://github.com/yasir13001?tab=repositories">
-                    <button type="submit" class="w-50 py-3 px-6 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-700 hover:bg-indigo-900 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                    <button type="submit" class="w-50 mt-8 py-3 px-6 border border-transparent rounded-md shadow-sm text-base font-medium text-white ">
                         <i class="fas fa-code mr-2 text-white"></i> Start Contributing
                     </button>
                 </a>

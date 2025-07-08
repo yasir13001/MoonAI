@@ -1,4 +1,4 @@
-
+import BackwardButton from '../../shared/ui/button/backward_button/BackwardButton';
 import { Link } from 'react-router-dom';
 
 import './TiledLayout.css';
@@ -13,16 +13,25 @@ const items = [
 
 const TiledLayout = () => {
   return (
-    <div className="tiled-layout">
-      {items.map((item) => (
-        <Link to={item.url} key={item.id}>
-          <div className="tile">
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
-          </div>
+    <section className='tiled-layout-section'>
+
+        <Link to={'/'}>
+          <BackwardButton />
         </Link>
-      ))}
-    </div>
+
+      <div className="tiled-layout">
+        
+        {items.map((item) => (
+          <Link to={item.url} key={item.id}>
+            <div className="tile">
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          </Link>
+        ))}
+      </div>
+
+    </section>
   );
 };
 

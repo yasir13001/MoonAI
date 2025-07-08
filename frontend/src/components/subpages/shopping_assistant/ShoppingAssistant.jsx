@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import BackwardButton from '../../../shared/ui/button/backward_button/BackwardButton';
 import ResponseMessage from '../../../shared/ui/response/ResponseMessage';
 import { Link } from 'react-router-dom';
+import logo from '/MoonAI-logo-resized.png';
 
 import '../Subpages.css';
 import './ShoppingAssistant.css';
@@ -13,40 +14,10 @@ const ShoppingAssistant = () => {
     
     const [orderInput, setOrderInput] = useState('');
     const [sessionId, setSessionId] = useState('');
-    const [responseData, setResponseData] = useState([{
-        "session id": "580320b5-5dcb-4721-8383-223d1388c41c",
-        "user": "add 5 kg Milk, 1 kg Flour, 2 pack of Coffee, and 1 kg Sugar",
-        "response": [
-            {
-                "product_id": "37-606-0510",
-                "product_name": "Milk",
-                "quantity": 5,
-                "inv_qty": "18"
-            },
-            {
-                "product_id": "05-334-2923",
-                "product_name": "Bread Flour",
-                "quantity": 1,
-                "inv_qty": "14"
-            },
-            {
-                "product_id": "57-562-2358",
-                "product_name": "Black Coffee",
-                "quantity": 2,
-                "inv_qty": "37"
-            },
-            {
-                "product_id": "22-141-9798",
-                "product_name": "White Sugar",
-                "quantity": 1,
-                "inv_qty": "47"
-            }
-        ]
-    }]);
+    const [responseData, setResponseData] = useState([]);
     const [responseMessage, setResponseMessage] = useState('');
     const [isError, setIsError] = useState(false);
 
-    // Load session ID from sessionStorage on component mount
     useEffect(() => {
         const savedSessionId = sessionStorage.getItem('sessionId');
         if (savedSessionId) {
@@ -135,12 +106,15 @@ const ShoppingAssistant = () => {
     return (
         <div className='subpage-wrapper'>
 
-            <Link to={'/'}>
+            <Link to={'/moon_ai_tools'}>
                 <BackwardButton/>
             </Link>
 
             <input value={sessionId} type="text" id="sessionInput" placeholder="Session ID" readOnly={true} class="py-3 px-4 block w-full shadow-sm rounded-md"/>
-            <h2 class="text-3xl font-extrabold text-white sm:text-4xl">CheckitOut - Your Order Assistant</h2>
+            <h2 class="flex items-center justify-center gap-3 text-3xl font-extrabold text-white sm:text-4xl">
+                <img src={logo} alt='Moon AI organization logo' width={60}/>
+                CheckitOut - Your Order Assistant
+            </h2>
             <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-400 sm:mt-4">Details: Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolores, nesciunt itaque. Voluptatibus a ex ipsam dolorum provident maiores unde laboriosam qui, cumque nobis aliquam maxime error nostrum reprehenderit laborum esse!</p>
             <div className="form-output-wrapper">
                 <form id="shoppingForm" class="space-y-6">

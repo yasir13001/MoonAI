@@ -494,9 +494,19 @@ video {
 .justify-between {
     justify-content: space-between
 }
+.justify-around {
+    justify-content: space-around
+}
 
 .gap-12 {
     gap: 3rem
+}
+
+.gap-14 {
+    gap: 4rem
+}
+.gap-16 {
+    gap: 6rem
 }
 
 .gap-6 {
@@ -870,6 +880,12 @@ video {
     --tw-text-opacity: 1;
     color: rgb(255 255 255 / var(--tw-text-opacity, 1))
 }
+.text-dark-orange {
+    --tw-text-opacity: 1;
+    color: #FF8A65;
+}
+
+
 .text-white:hover{
     color: white;
 }
