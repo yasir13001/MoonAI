@@ -24,25 +24,29 @@ function App() {
             element={
               <>
                 <Header />
-                <TiledLayout />
+                
                 <Contributors />
                 <Contacts />
                 <Footer />
               </>
             }
           />
-          <Route path="/moon_report_generator"
-            element={<ReportForm/>}
+
+          <Route path="/moon_ai_tools"
+            element={<TiledLayout/>}
           />
-          <Route path="/moon_data_api"
-            element={<MoonDataAPI/>}
-          />
-          <Route path="/shopping_assistant"
-            element={<ShoppingAssistant/>}
-          />
-          <Route path="/another_one_assistant"
-            element={<AnotherOneAssistant/>}
-          />
+            <Route path="/moon_ai_tools/moon_report_generator"
+              element={<ReportForm/>}
+            />
+            <Route path="/moon_ai_tools/moon_data_api"
+              element={<MoonDataAPI/>}
+            />
+            <Route path="/moon_ai_tools/shopping_assistant"
+              element={<ShoppingAssistant/>}
+            />
+            <Route path="/moon_ai_tools/another_one_assistant"
+              element={<AnotherOneAssistant/>}
+            />
 
         </Routes>
 

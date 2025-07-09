@@ -1,11 +1,19 @@
 #contributors{
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     background: #1A1A2E;
     margin-left: 20px;
     margin-right: 20px;
     border: 1px solid #3A3A5A;
     border-radius: 12px;
-    p{
+    p {
         color: #00E5FF;
+        text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+        position: relative;
+        z-index: 1;
     }
     .contributor-avatar:hover {
         transform: scale(1.1);

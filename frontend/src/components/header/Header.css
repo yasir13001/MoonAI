@@ -1,21 +1,29 @@
 .header-section{
 
   .header {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 20px 60px;
     text-align: center;
-    background: #0F0F1A;
     color: #ffffff;
   
   }
   nav{
+    will-change: backdrop-filter, transform;
     z-index: 10;
     padding: 5px 20px;
     position: fixed;
     width: 100%;
-    background: #0f0f1ae0;
+    background: #0f0f1ada;
     color: #FF8A65;
     display: flex;
     justify-content: space-between;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 
     .logo, .nav-routes, .burger-button{
       z-index: 10;
@@ -40,13 +48,15 @@
       }
     }
   }
-  .nav-moon-ai-tools {
+  .burger-menu {
+    will-change: backdrop-filter, transform;
     position: fixed;
     left: 0;
     top: 60px;
     width: 100%;
-    background: #0f0f1ae0;
-    z-index: 8;
+    color: #FF8A65;
+    background: #0f0f1ada;
+    z-index: 5;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -57,14 +67,18 @@
     transform: translateY(-200%);
     transition: 
       max-height 0.8s cubic-bezier(0.22, 1, 0.36, 1),
-      opacity 0.6s ease,
-      transform 0.6s ease;
+      opacity 0.3s ease,
+      transform 0.3s ease;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
   }
-  .nav-moon-ai-tools.active{
+  .burger-menu.active{
+    z-index: 5;
     opacity: 1;
     transform: translateY(0);
   }
-  .tools{
+  .burger-menu-item{
     margin: 5px;
     color: #FF8A65;
     cursor: pointer;
@@ -80,7 +94,7 @@
       text-align: center;
     }
   }
-  .tools:hover{
+  .burger-menu-item:hover{
     color: #FF8A65;
     text-shadow: 0 0 5px #FF8A65, 
                 0 0 10px rgba(255, 138, 101, 0.5);
@@ -90,7 +104,15 @@
     margin-top: 80px;
     font-size: 3rem;
     margin-bottom: 10px;
-  }
+    background: 
+      radial-gradient(ellipse at 20% 20%, #FF8A65 0%, transparent 60%),
+      linear-gradient(to bottom, #00E5FF, #1A1A2E);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    text-shadow: 0 0 10px rgba(255, 138, 101, 0.3);
+}
   
   .header-subtitle {
     font-size: 1.2rem;
@@ -113,5 +135,9 @@
     width: 25px;
     height: 2px;
     background: #FF8A65;
+  }
+
+  .carousel-inner-wrapper{
+    width: 100%;
   }
 }
