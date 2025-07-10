@@ -8,39 +8,6 @@
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 16px;
   }
-  
-  .tile {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background: #1A1A2E;
-    height: 300px;
-    border: 1px solid #FF8A65;
-    border-radius: 12px;
-    padding: 16px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease;
-    cursor: pointer;
-    a,
-    a:hover,
-    h3 {
-      color: white;
-    }
-  }
-  
-  .tile:hover {
-    transform: scale(1.02);
-    background: linear-gradient(to right, #242444, #3A3A5A);
-  }
-  
-  .tile h3 {
-    margin: 0 0 10px;
-    font-size: 1.2rem;
-  }
-  
-  .tile p {
-    margin: 0;
-    color: #ccc;
-  }
+
+  /* .tile styles in App.css global */
 }
