@@ -1,31 +1,33 @@
 import BackwardButton from '../../shared/ui/button/backward_button/BackwardButton';
 import { Link } from 'react-router-dom';
+import projectCards from '../../shared/ui/cards';
 
 import './TiledLayout.css';
-
-// URL-prop added to each item-object so we can proceed to them
-const items = [
-  { id: 1, title: 'Moon Report Generator', description: 'Details of the first item', url: 'moon_report_generator' },
-  { id: 2, title: 'Moon Data API', description: 'Details of the second item', url: 'moon_data_api' },
-  { id: 3, title: 'Shopping Assistant', description: 'Details of the third item', url: 'shopping_assistant' },
-  { id: 4, title: 'Another One Assistant', description: 'Details of the fourth item', url: 'another_one_assistant' },
- ];
 
 const TiledLayout = () => {
   return (
     <section className='tiled-layout-section'>
 
-        <Link to={'/'}>
-          <BackwardButton />
-        </Link>
+      <Link to={'/'}>
+        <BackwardButton />
+      </Link>
 
       <div className="tiled-layout">
-        
-        {items.map((item) => (
+        {projectCards.map((item) => (
           <Link to={item.url} key={item.id}>
             <div className="tile">
-              <h3>{item.title}</h3>
-              <p>{item.description}</p>
+              <img className='tile-project-img' src={item.img} alt='MoonAI project image'/>
+              <h3 className='tiled-project-h3'>{item.title}</h3>
+              <p className='tiled-project-p'>{item.description}</p>
+              
+              <div class='flex flex-wrap gap-3 text-center tracking-wider'>
+                {item.tech_stack.map((technology, index) => (
+                  <span key={index} className='tiled-project-span'>{technology}</span>
+                ))}
+              </div>
+
+              <div id='view-project' class='block w-full text-right text-1-3xl'>View Project ➡</div>
+
             </div>
           </Link>
         ))}

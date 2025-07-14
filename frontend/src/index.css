@@ -14,7 +14,7 @@
 
 #root {
   background:
-    radial-gradient(ellipse at 20% 20%, rgba(255, 138, 101, 0.15) 0%, transparent 60%),
+    radial-gradient(ellipse at 20% -10%, rgba(255, 138, 101, 0.15) 0%, transparent 60%),
     linear-gradient(to bottom, #1A1A2E, #0F0F1C);
   margin: 0 auto;
   display: flex;

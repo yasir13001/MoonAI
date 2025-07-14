@@ -8,8 +8,12 @@
     border: 1px solid #3A3A5A;
     border-radius: 12px;
 
+    a{
+        transition: color 0.6s ease;
+    }
     a:hover{
         color: #FF8A65;
+        transition: color 0.5s ease;
     }
     p{
         color: #d2d2ff;

@@ -418,9 +418,15 @@ video {
 .block {
     display: block
 }
+.inline-block {
+    display: inline-block
+}
 
 .flex {
     display: flex
+}
+.flex-wrap {
+    flex-wrap: wrap;
 }
 
 .inline-flex {
@@ -511,6 +517,9 @@ video {
 
 .gap-6 {
     gap: 1.5rem
+}
+.gap-3 {
+    gap: 0.5rem
 }
 
 .gap-8 {
@@ -741,7 +750,14 @@ video {
 .text-center {
     text-align: center
 }
+.text-right {
+    text-align: right
+}
 
+.text-1-3xl {
+    font-size: 1.3rem;
+    line-height: 1.7rem
+}
 .text-2xl {
     font-size: 1.5rem;
     line-height: 2rem
@@ -884,6 +900,10 @@ video {
     --tw-text-opacity: 1;
     color: #FF8A65;
 }
+.text-red {
+    --tw-text-opacity: 1;
+    color: #FF6B6B;
+}
 
 
 .text-white:hover{
@@ -1005,12 +1025,12 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background: #FF6B6B;
+  background: #FF8A65;
   color: white;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.1);
   z-index: 1;
     
   &::before {
@@ -1021,25 +1041,25 @@ button {
     right: 0;
     bottom: 0;
     border-radius: 6px;
-    box-shadow: 0 0 8px 2px rgba(255, 107, 107, 0.6);
+    box-shadow: 0 0 8px 2px rgba(255, 138, 101, 0.6);
     opacity: 0;
-    transition: opacity 0.3s;
+    transition: opacity 0.5s;
     z-index: -1;
   }
 
   &:hover {
-    background: #FF5252;
+    background: #FF774D;
     
     &::before {
       opacity: 1;
       box-shadow: 
-        0 0 12px 3px rgba(255, 107, 107, 0.7),
-        0 0 20px 5px rgba(255, 107, 107, 0.4);
+        0 0 12px 3px rgba(255, 138, 101, 0.7),
+        0 0 20px 5px rgba(255, 138, 101, 0.4);
     }
   }
 
   &:active {
-    background: #E05555;
+    background: #E06D4D;
   }
 
   &:focus-visible {
@@ -1048,20 +1068,96 @@ button {
       opacity: 1;
       box-shadow: 
         0 0 0 2px white,
-        0 0 12px 6px rgba(255, 107, 107, 0.8);
+        0 0 12px 6px rgba(255, 138, 101, 0.8);
     }
   }
 }
 textarea, input, select {
     background: #2D2D4D;
-    border: 1px solid #4b4b6a;
+    border: 1px solid;
+    border-color: #4b4b6a;
+    transition: background-color 0.8s ease, border-color 0.8s ease;
 }
-textarea:hover, input:hover, select:hover{
+
+textarea:hover, input:hover, select:hover {
     background: #303055;
+    border-color: #FF8A65;
+    transition: background-color 0.5s ease, border-color 0.5s ease;
 }
 textarea:focus, input:focus, select:focus{
     border-color: #FF8A65;
+    background: #303055;
     outline: none;
+}
+
+.tile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    background: #1E1E3A;
+    height: auto;
+    border: 1px solid #3A3A5A;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.8s ease;
+    cursor: pointer;
+    img{
+        border: 1px solid #3A3A5A;
+        border-radius: 12px;
+        transition: all 0.5s ease;
+    }
+    h3 {
+        color: white;
+        font-size: 28px;
+        height: 100px;
+        transition: all 0.5s ease;
+    }
+    
+    .tiled-project-p, #view-project {
+        transition: all 0.5s ease;
+    }
+    
+    .tiled-project-span {
+        font-size: small;
+        white-space: nowrap;
+        text-overflow: clip;
+        min-width: max-content;
+        padding: 3px 8px;
+        border: 1px solid;
+        border-radius: 5px;
+        transition: all 0.5s ease;
+    }
+}
+
+.tile > .tiled-project-h3 {
+    margin-top: 30px;
+}
+
+.tile > .tiled-project-p,
+.tile > div {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.tile:hover {
+    border-color: #FF8A65;
+    box-shadow: 0 0 5px #FF8A65, 0 0 10px rgba(255, 138, 101, 0.5);
+    transition: all 0.5s ease;
+
+    .tiled-project-p, h3, #view-project {
+        color: #FF8A65;
+        text-shadow: 0 0 8px rgba(255, 138, 101, 0.3);
+    }
+    .tile-project-img{
+        border-color: #FF8A65;
+    }
+    .tiled-project-span {
+        border-color: #FF8A65;
+        color: #FF8A65;
+        box-shadow: 0 0 5px rgba(255, 138, 101, 0.3);
+    }
 }
 
 /* ***************** MEDIA QUERIES ****************** */
