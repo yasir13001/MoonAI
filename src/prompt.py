@@ -18,7 +18,10 @@ from src.config import Settings
 
 
 class GenerateReport:
-    def __init__(
+   """
+    Generates lunar visibility reports by processing astronomical data, creating prompts for large language models, invoking different AI services, parsing and summarizing their responses, and producing PDF reports.
+    """
+  def __init__(
         self, df: pd.DataFrame, date: str, islamic_month: str, islamic_year: str
     ):
         load_dotenv()
