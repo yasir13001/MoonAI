@@ -131,7 +131,7 @@ class GenerateReport:
     def query_gemini(self, prompt):
         client = genai.Client(api_key=self.api_key)
         response = client.models.generate_content(
-            model="gemini-2.0-flash", contents=prompt
+            model="gemini-2.5-flash", contents=prompt
         )
         return response.text
 
