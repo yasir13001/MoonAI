@@ -1,23 +1,26 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <title>Moon Report Generator</title>
-
-     <link rel="stylesheet" href="static/style.css">
-     <link rel="icon" href="/static/favicon.ico" type="image/x-icon">
-
+    <link rel="stylesheet" href="static/style.css" />
+    <link rel="icon" href="/static/favicon.ico" type="image/x-icon" />
   </head>
   <body>
     <div class="container">
       <h2>Moon Report Generator</h2>
       <form id="reportForm">
         <label for="date">Date (DD-MM-YYYY):</label>
-        <input type="text" id="date" value="28-05-2025" required />
-
+        <input
+          type="text"
+          id="date"
+          value="28-05-2025"
+          placeholder="DD-MM-YYYY"
+          required
+        />
 
         <label for="month">Islamic Month:</label>
-        <select id="month" required></select>
+        <select style="cursor: pointer;" id="month" required></select>
 
         <label for="year">Islamic Year:</label>
         <input type="number" id="year" value="1446" required />
@@ -35,74 +38,109 @@
     </div>
 
     <script>
-    // Populate Islamic months dropdown
-    const islamicMonths = [
-      "MUHARRAM",
-      "SAFAR",
-      "RABI-UL-AWWAL",
-      "RABI-US-SANI",
-      "JAMADI-UL-AWWAL",
-      "JAMADI-US-SANI",
-      "RAJAB",
-      "SHABAN",
-      "RAMADAN",
-      "SHAWWAL",
-      "ZUL-QADAH",
-      "ZUL-HIJJAH"
-    ];
-
-    const select = document.getElementById("month");
-    islamicMonths.forEach(month => {
-      const option = document.createElement("option");
-      option.value = month;
-      option.textContent = month;
-      select.appendChild(option);
-    });
-
-   const backendURL = "https://moonai-backend.onrender.com"; // Use your real Render URL
-
-    function generateReport(type) {
-      const formData = {
-        date: document.getElementById("date").value,
-        islamic_month: document.getElementById("month").value,
-        islamic_year: document.getElementById("year").value,
-      };
-
-      let endpoint = "";
-      if (type === "moon-parameters") {
-        endpoint = "/generate-moon-parameters/";
-      } else {
-        endpoint = "/generate-visibility-report/";
+      function setLoading(isLoading) {
+        const buttons = document.querySelectorAll("button");
+        buttons.forEach((button) => {
+          button.disabled = isLoading;
+        });
+        const message = document.getElementById("responseMessage");
+        if (isLoading) {
+          message.innerText = "Generating report, please wait...";
+          message.style.color = "#0066cc";
+        } else {
+          message.innerText = "";
+        }
       }
 
-      fetch(`${backendURL}${endpoint}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      })
-        .then((response) => {
-          if (!response.ok) throw new Error("Failed to generate report.");
-          return response.blob();
+      function validateForm() {
+        const dateInput = document.getElementById("date").value.trim();
+        const dateRegex = /^\d{2}-\d{2}-\d{4}$/;
+
+        if (!dateInput) {
+          alert("Date is required.");
+          return false;
+        }
+
+        if (!dateRegex.test(dateInput)) {
+          alert("Date must be in DD-MM-YYYY format.");
+          return false;
+        }
+        return true;
+      }
+      // Populate Islamic months dropdown
+      const islamicMonths = [
+        "MUHARRAM",
+        "SAFAR",
+        "RABI-UL-AWWAL",
+        "RABI-US-SANI",
+        "JAMADI-UL-AWWAL",
+        "JAMADI-US-SANI",
+        "RAJAB",
+        "SHABAN",
+        "RAMADAN",
+        "SHAWWAL",
+        "ZUL-QADAH",
+        "ZUL-HIJJAH",
+      ];
+
+      const select = document.getElementById("month");
+      islamicMonths.forEach((month) => {
+        const option = document.createElement("option");
+        option.value = month;
+        option.textContent = month;
+        select.appendChild(option);
+      });
+
+      const backendURL = "https://moonai-backend.onrender.com"; // Use your real Render URL
+
+      function generateReport(type) {
+        if (!validateForm()) return;
+        setLoading(true);
+        const formData = {
+          date: document.getElementById("date").value,
+          islamic_month: document.getElementById("month").value,
+          islamic_year: document.getElementById("year").value,
+        };
+
+        let endpoint = "";
+        if (type === "moon-parameters") {
+          endpoint = "/generate-moon-parameters/";
+        } else {
+          endpoint = "/generate-visibility-report/";
+        }
+
+        fetch(`${backendURL}${endpoint}`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
         })
-        .then((blob) => {
-          const url = URL.createObjectURL(blob);
-          const a = document.createElement("a");
-          a.href = url;
-          a.download = `${type.replace("-", "_")}.pdf`;
-          document.body.appendChild(a);
-          a.click();
-          a.remove();
-          document.getElementById("responseMessage").innerText =
-            "Download started.";
-        })
-        .catch((error) => {
-          document.getElementById("responseMessage").innerText =
-            "Error: " + error.message;
-          document.getElementById("responseMessage").style.color = "red";
-        });
-    }
-  </script>
+          .then((response) => {
+            if (!response.ok) throw new Error("Failed to generate report.");
+            return response.blob();
+          })
+          .then((blob) => {
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = `${type.replace("-", "_")}.pdf`;
+            document.body.appendChild(a);
+            a.click();
+            a.remove();
+            let resMsg = document.getElementById("responseMessage");
+            resMsg.innerText = "Download started.";
+            resMsg.style.color = "#28a745";
+          })
+          .catch((error) => {
+            let resMsg = document.getElementById("responseMessage");
+            resMsg.innerText = "Error: " + error.message;
+            resMsg.style.color = "red";
+          })
+          .finally(() => {
+            setLoading(false);
+          });
+      }
+    </script>
   </body>
 </html>
