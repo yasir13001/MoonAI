@@ -90,16 +90,17 @@ responses = generator.generate_all(prompts)
 
 ## 🔧 Configuration
 
-All configuration details for the Moon Report Generator can be found in the `config` directory.
+Configuration details for the Moon Report Generator are documented in the contributing guide.
 
-📁 **Path:** `CONTRIBUTE.md`
+📁 Path: `CONTRIBUTE.md`
 
-This file contains detailed instructions and parameters to customize how the application behaves, including:
+This guide includes:
 
-* API keys
-* Model settings (Gemini, Groq, LLaMA3, etc.)
-* Thread settings
-* Report formatting options
+* API key setup  
+* Model configuration (Gemini, Groq, LLaMA3 via Ollama)  
+* Threading and performance settings  
+* Report formatting options  
+* Development workflow and contribution standards
 
 ---
 
